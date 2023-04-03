@@ -70,6 +70,7 @@ class Adventurer {
         self.hitPoints+=potionBooster
     }
     
+    
     //function which creates a random chance that the hero will deliver a critical attack
     func criticalAttack() -> Bool {
         //creates random number between 1 and 10
@@ -97,17 +98,21 @@ class harry : Adventurer {
         self.name = "Harry"
         self.hitPoints = 100
     }
+    //overriding function from adventurer. Setting custom chance.
     override func criticalAttack() -> Bool {
+        //create random number. 33% chance of critical hit.
         var hitRoll : Int = getRando(3) + 1
         if Double(hitRoll) == 1 {
             return true
+            //critical attack successful
         } else {
             return false
+            //critical attack unsuccessful
         }
     }
 }
 class hermione : Adventurer {
- 
+    //initalizes hermione's properties
     init() {
         super.init(name: "Hermione", hitPoints: 100, hitRate: 0.75, damage: 40)
         self.damage = 40
@@ -115,17 +120,21 @@ class hermione : Adventurer {
         self.name = "Hermione"
         self.hitPoints = 100
     }
+    //overriding function from adventurer. Setting custom chance.
     override func criticalAttack() -> Bool {
+        //create random number. 25% chance of critical hit.
         var hitRoll : Int = getRando(4) + 1
         if Double(hitRoll) == 1 {
             return true
+            //critical attack successful
         } else {
             return false
+            //critical attack unsuccessful
         }
     }
 }
 class ron : Adventurer {
-    
+    //initalizes hermione's properties
     init() {
         super.init(name: "Ron", hitPoints: 100, hitRate: 0.3, damage: 100)
         self.damage = 100
@@ -133,12 +142,17 @@ class ron : Adventurer {
         self.name = "Ron"
         self.hitPoints = 100
     }
+    
+    //overriding function from adventurer. Setting custom chance.
     override func criticalAttack() -> Bool {
+        //create random number. 50% chance of critical hit.
         var hitRoll : Int = getRando(2) + 1
         if Double(hitRoll) == 1 {
             return true
+            //critical attack successful
         } else {
             return false
+            //critical attack unsuccessful
         }
     }
 }
